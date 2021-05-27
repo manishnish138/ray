@@ -54,7 +54,7 @@ if [ "${OSTYPE}" = "msys" ]; then
 elif [ "$(uname -m)" = "aarch64" ]; then
   wget -O "bazel-linux-arm64" "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-${platform}-arm64"
   chmod +u bazel-linux-arm64
-  sudo mv bazel-linux-arm64 /usr/bin/bazel
+  sudo mv bazel-linux-arm64 /usr/local/bin/bazel
   whereis bazel
 else
   target="./install.sh"
