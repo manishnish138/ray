@@ -68,6 +68,7 @@ else
     "${target}" --user > /dev/null
   fi
   rm -f "${target}"
+  whereis bazel
 fi
 
 for bazel_cfg in ${BAZEL_CONFIG-}; do
