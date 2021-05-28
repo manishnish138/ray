@@ -46,9 +46,9 @@ matrix:
       cache: false
 
     - os: linux
-      dist: bionic
+      dist: focal
       group: edge
-      virt: lxd
+      virt: vm
       arch: arm64-graviton2
       env:
         # - PYTHON=3.6
