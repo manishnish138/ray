@@ -287,6 +287,11 @@ _bazel_build_before_install() {
     target="//:ray_pkg"
   fi
   # NOTE: Do not add build flags here. Use .bazelrc and --config instead.
+  if [ "$(uname -m)" = "aarch64" ]; then
+    wget -O "bazel-linux-arm64" "https://github.com/bazelbuild/bazel/releases/download/3.6.0/bazel-3.6.0-linux-arm64"
+    chmod +x bazel-linux-arm64
+    sudo mv bazel-linux-arm64 /usr/local/bin/bazel
+  fi
   bazel build "${target}"
 }
 
