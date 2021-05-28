@@ -53,7 +53,7 @@ if [ "${OSTYPE}" = "msys" ]; then
   curl -f -s -L -R -o "${target}" "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-${platform}-${achitecture}.exe"
 elif [ "$(uname -m)" = "aarch64" ]; then
   wget -O "bazel-linux-arm64" "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-${platform}-arm64"
-  chmod +u bazel-linux-arm64
+  chmod +x bazel-linux-arm64
   sudo mv bazel-linux-arm64 /usr/local/bin/bazel
   sudo cp /usr/local/bin/bazel /usr/local/lib/bazel
   whereis bazel
