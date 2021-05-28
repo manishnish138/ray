@@ -62,6 +62,9 @@ matrix:
         - . ./ci/travis/ci.sh init RAY_CI_LINUX_WHEELS_AFFECTED,RAY_CI_JAVA_AFFECTED,RAY_CI_STREAMING_JAVA_AFFECTED
     - stage: build
       os: linux
+      dist: focal
+      group: edge
+      virt: vm
       arch: arm64-graviton2
       env:
         #- PYTHON=3.7
