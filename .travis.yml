@@ -79,7 +79,7 @@ matrix:
         - python -m pip install docker
         - if [[ "$TRAVIS_PULL_REQUEST" != "false" ]]; then python $TRAVIS_BUILD_DIR/ci/travis/build-docker-images.py --py-versions PY37 --build-type PR --build-base; fi
         - bash ./java/build-jar-multiplatform.sh linux
-      cache: true
+      cache: bazel
 
 after_script:
   - if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then ./ci/travis/upload_build_info.sh; fi
